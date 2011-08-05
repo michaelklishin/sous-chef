@@ -7,6 +7,7 @@ not just) easy.
 ## Dependencies
 
 Sous Chef uses [Vagrant](http://vagrantup.com) and thus relies on [Virtual Box](http://virtualbox.org) being installed. Note that you do not
+need to have Chef installed locally. It will only be run in a virtual machine.
 
 
 ## Getting started with Sous Chef
