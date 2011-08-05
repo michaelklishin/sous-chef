@@ -8,3 +8,4 @@
 cookbooks/*
 Vagrantfile
 .vagrant
+Gemfile.lock
