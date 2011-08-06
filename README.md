@@ -107,6 +107,18 @@ Then provision your VM (this will run chef-solo and converge VM to the state you
 Running chef-solo may take from several seconds to several minutes, dependeing on what selected recipes do. Building 13 Ruby versions/implementations
 for travis-ci.org, for example, takes slightly over 50 minutes but most of recipes run in under 15 seconds.
 
+Once provisioning finishes, ssh into the VM to check what the environment looks like:
+
+    vagrant ssh
+
+When you are done with your work on the cookbook you can either power off the VM to use it later with
+
+    vagrant halt
+
+or destroy it completely with
+
+    vagrant destroy
+
 
 ## Developing a new cookbook with Sous Chef
 
