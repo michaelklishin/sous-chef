@@ -8,17 +8,10 @@ new and test modified [cookbooks](https://github.com/travis-ci/travis-cookbooks/
 Sous Chef intentionally focuses on automating away as many distractions as possible so you can focus on developing your Chef cookbooks. It does just one thing but does it well.
 
 
-## Dependencies
-
-Sous Chef uses [Vagrant](http://vagrantup.com) and thus relies on [Virtual Box](http://virtualbox.org) being installed. Note that you do not
-need to have Chef installed locally. It will only be run in a virtual machine.
-
-
 ## How it works
 
-With Sous Chef, you use Vagrant and a locally running VirtualBox VM to develop and test your cookbooks. Sous Chef can use any collection of
-cookbooks: [those we use for travis-ci.org](https://github.com/travis-ci/travis-cookbooks/tree/master/vagrant_base), cookbooks you are using for
-commercial projects, cookbooks from the official OpsCode repository or anything else.
+With Sous Chef, you use Vagrant and a locally running VirtualBox VM to develop and test your cookbooks. Sous Chef can use any collection of cookbooks: [those we use for travis-ci.org](https://github.com/travis-ci/travis-cookbooks/tree/master/vagrant_base), cookbooks you are using for
+commercial projects, cookbooks from the [official OpsCode repository](http://github.com/opscode/cookbooks) or anything else.
 
 With Sous Chef, you provision a locally running virtual machine managed by [Vagrant](http://vagrantup.com) in just one command. The process is
 set up to shorten the feedback loop:
@@ -30,6 +23,12 @@ set up to shorten the feedback loop:
 
 Once you are done with your cookbooks, just push them to a source control repository or rsync them to your server. Then destroy VM environment
 you were using in one command. Or just power off the VM and come back to work with it later.
+
+
+## Dependencies
+
+Sous Chef uses [Vagrant](http://vagrantup.com) and thus relies on [Virtual Box](http://virtualbox.org) being installed. Note that you do not
+need to have Chef installed locally. It will only be run in a virtual machine.
 
 
 ## Getting started with Sous Chef
