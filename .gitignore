@@ -15,4 +15,5 @@ Gemfile.lock
 doc/*
 tmp/*
 
+cookbooks
 cookbooks/*
