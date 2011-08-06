@@ -5,7 +5,7 @@ not just) easy. It brings practices that the [Travis Development Team](https://g
 new and test modified [cookbooks](https://github.com/travis-ci/travis-cookbooks/tree/master/vagrant_base) for
 [Travis CI](http://travis-ci.org) to the masses.
 
-Sous Chef intentionally focuses on automating away as many distractions as possible so you can focus on developing your Chef cookbooks.
+Sous Chef intentionally focuses on automating away as many distractions as possible so you can focus on developing your Chef cookbooks. It does just one thing but does it well.
 
 
 ## Dependencies
