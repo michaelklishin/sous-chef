@@ -1,9 +1,11 @@
 # What is Travis Sous Chef
 
-Travis Sous Chef is a repository that makes development and testing of Chef cookbooks (for travis-ci.org but
+Travis Sous Chef is a repository that makes development and testing of [Chef](http://www.opscode.com/chef/) cookbooks (for [Travis CI](http://travis-ci.org) but
 not just) easy. It brings practices that the [Travis Development Team](https://github.com/travis-ci) uses to develop
 new and test modified [cookbooks](https://github.com/travis-ci/travis-cookbooks/tree/master/vagrant_base) for
 [Travis CI](http://travis-ci.org) to the masses.
+
+Sous Chef intentionally focuses on automating away as many distractions as possible so you can focus on developing your Chef cookbooks.
 
 
 ## Dependencies
