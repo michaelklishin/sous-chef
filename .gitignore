@@ -9,3 +9,8 @@ cookbooks/*
 Vagrantfile
 .vagrant
 Gemfile.lock
+
+
+.yardoc/*
+doc/*
+tmp/*

@@ -1,0 +1,7 @@
+--no-private
+--protected
+--markup="markdown"
+--main README.md
+--hide-tag todo
+-
+LICENSE
