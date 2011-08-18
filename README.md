@@ -60,6 +60,12 @@ Once VM is created, create cookbooks directory or clone an existing collection o
     # or
     git clone git://github.com/travis-ci/travis-cookbooks.git cookbooks
 
+To allow provisioning with chef you need to uncomment the following line
+(including its associated end statement)
+
+      config.vm.provision :chef_solo do |chef|
+
+
 After that point Vagrant at the cookbooks location by editing Vagrantfile. For Travis CI cookbooks, you just need to uncomment
 
     # chef.cookbooks_path = "cookbooks/vagrant_base"
