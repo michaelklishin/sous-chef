@@ -1,7 +1,7 @@
 source :rubygems
 
 
-gem "vagrant", "~> 0.7.7"
+gem "vagrant", "~> 0.8.2"
 
 group :development do
   gem "rdiscount"
