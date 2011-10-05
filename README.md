@@ -33,18 +33,14 @@ need to have Chef installed locally. It will only be run in a virtual machine.
 
 ## Getting started with Sous Chef
 
-First install [VirtualBox 4.0.x](http://download.virtualbox.org/virtualbox/4.0.12) (4.1.0 has known issues and we recommend holding off with upgrades):
+First install [VirtualBox 4.1.x](http://download.virtualbox.org/virtualbox/4.1.4/):
 
-* For [Mac OS X](http://download.virtualbox.org/virtualbox/4.0.12/VirtualBox-4.0.12-72916-OSX.dmg)
-* For [64-bit Linux distributions](http://download.virtualbox.org/virtualbox/4.0.12/)
+* For [Mac OS X](http://download.virtualbox.org/virtualbox/4.1.4/VirtualBox-4.1.4-74291-OSX.dmg)
+* For [64-bit Linux distributions](http://download.virtualbox.org/virtualbox/4.1.4/)
 
 Then install the vagrant gem:
 
-    gem install vagrant --version="~> 0.7.7" # 0.8.x only works with VirtualBox 4.1.x, we recommend not upgrading just yet
-
-Check Vagrant version:
-
-    vagrant --version # => Vagrant version 0.7.7
+    gem install vagrant
 
 Copy sample Vagrant file:
 
