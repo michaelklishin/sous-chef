@@ -1,7 +1,7 @@
 source :rubygems
 
 
-gem "vagrant", "~> 0.7.7"
+gem "vagrant"
 
 platform :jruby do
   gem "jruby-openssl"
