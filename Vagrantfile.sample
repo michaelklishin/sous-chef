@@ -1,25 +1,56 @@
 Vagrant::Config.run do |config|
-  config.vm.box     = "base"
-  config.vm.box_url = "http://files.vagrantup.com/lucid32_old.box"
+  config.vm.box     = "natty32_base"
+  config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
 
-  #config.vm.provision :chef_solo do |chef|
-    # point Vagrant at the location of cookbooks you are going to use,
-    # for example, a clone of your fork of github.com/travis-ci/travis-cookbooks
-    # chef.cookbooks_path = "cookbooks/vagrant_base"
+  config.vm.forward_port 'ssh', 22, 2220
 
-    # Turn on verbose Chef logging if necessary
-    # chef.log_level      = :debug
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "cookbooks/vagrant_base"
+    chef.log_level      = :debug
 
     # List the recipies you are going to work on/need.
-    # chef.add_recipe     "build-essential"    
-    # chef.add_recipe     "networking_basic"    
-    # chef.add_recipe     "kerl"
+    # chef.add_recipe     "build-essential"
+    # chef.add_recipe     "networking_basic"
+
+    # chef.add_recipe     "travis_build_environment"
+    # chef.add_recipe     "git"
+
+    # chef.add_recipe     "java"
+    # chef.add_recipe     "leiningen"
+
+    # chef.add_recipe     "rabbitmq::with_management_plugin"
+
+    # chef.add_recipe     "rvm"
+    # chef.add_recipe     "rvm::multi"
+    # chef.add_recipe     "nodejs::multi"
+    # chef.add_recipe     "python::multi"
+
+    # chef.add_recipe     "libqt4"
+    # chef.add_recipe     "xserver"
+    # chef.add_recipe     "firefox"
+
+    # chef.add_recipe     "redis"
+    # chef.add_recipe     "riak"
+    # chef.add_recipe     "mongodb"
+    # chef.add_recipe     "postgresql"
+    # chef.add_recipe     "mysql"
+    # chef.add_recipe     "couchdb"
 
     # chef.json.merge!({
-    #   :kerl => {
-    #     :user     => "vagrant",
-    #     :group    => "vagrant"
-    #   }
-    # })
-  #end
+    #                    :rvm => {
+    #                      :rubies  => %w(1.8.7 rbx-2.0 1.9.3 1.9.2 jruby),
+    #                      :aliases => {
+    #                        "rbx"         => "rbx-head",
+    #                        "rbx-2.0"     => "rbx-head"
+    #                        "rbx-2.0.pre" => "rbx-head"
+    #                      }
+    #                    },
+    #                    :mysql => {
+    #                      :server_root_password => ""
+    #                    },
+    #                    :postgresql => {
+    #                      :max_connections => 256
+    #                    }
+    #                  })
+  end
 end
