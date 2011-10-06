@@ -1,4 +1,7 @@
 Vagrant::Config.run do |config|
+  # config.vm.box     = "lucid32_base"
+  # config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+
   config.vm.box     = "natty32_base"
   config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
 
