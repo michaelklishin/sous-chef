@@ -41,7 +41,7 @@ Vagrant::Config.run do |config|
     #                      :rubies  => %w(1.8.7 rbx-2.0 1.9.3 1.9.2 jruby),
     #                      :aliases => {
     #                        "rbx"         => "rbx-head",
-    #                        "rbx-2.0"     => "rbx-head"
+    #                        "rbx-2.0"     => "rbx-head",
     #                        "rbx-2.0.pre" => "rbx-head"
     #                      }
     #                    },
