@@ -46,7 +46,7 @@ Copy sample Vagrant file:
 
     cp Vagrantfile.sample Vagrantfile
 
-Create a 32-bit Ubuntu 10.04.3 virtual machine you will be developing cookbooks in:
+Create a 32-bit Ubuntu 11.04 virtual machine you will be developing cookbooks in:
 
     vagrant up 
 
@@ -77,8 +77,8 @@ Next choose some cookbooks to provision. In the case of Travis CI cookbooks, bui
 Your Vagrantfile then will look like this:
 
     Vagrant::Config.run do |config|
-      config.vm.box     = "base"
-      config.vm.box_url = "http://files.vagrantup.com/lucid32_old.box"
+      config.vm.box     = "natty32_base"
+      config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
     
       config.vm.provision :chef_solo do |chef|
         # point Vagrant at the location of cookbooks you are going to use,
