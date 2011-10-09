@@ -1,0 +1,67 @@
+Vagrant::Config.run do |config|
+  config.vm.box     = "lucid32_base"
+  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+
+  # Future version of travis-ci.org will use Ubuntu 11.04. MK.
+  # config.vm.box     = "natty32_base"
+  # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
+
+  config.vm.forward_port 'ssh', 22, 2220
+
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "cookbooks/vagrant_base"
+    chef.log_level      = :debug
+
+    # List the recipies you are going to work on/need.
+    chef.add_recipe "travis_build_environment"
+    chef.add_recipe "apt"
+
+    chef.add_recipe "build-essential"
+    chef.add_recipe "scons"
+    chef.add_recipe "networking_basic"
+    chef.add_recipe "sysctl"
+    chef.add_recipe "openssl"
+    chef.add_recipe "libyaml"
+    chef.add_recipe "emacs::nox"
+    chef.add_recipe "vim"
+    chef.add_recipe "timetrap"
+    chef.add_recipe "git"
+    chef.add_recipe "java"
+    chef.add_recipe "ant"
+    chef.add_recipe "maven"
+    chef.add_recipe "leiningen"
+    chef.add_recipe "libqt4"
+    chef.add_recipe "libgdbm"
+    chef.add_recipe "libncurses"
+    chef.add_recipe "libossp-uuid"
+    chef.add_recipe "libv8"
+    chef.add_recipe "nodejs"
+    chef.add_recipe "rvm"
+    chef.add_recipe "rvm::multi"
+    chef.add_recipe "sqlite"
+    chef.add_recipe "postgresql::client"
+    chef.add_recipe "postgresql::server"
+    chef.add_recipe "mysql::client"
+    chef.add_recipe "mysql::server"
+    chef.add_recipe "redis"
+    chef.add_recipe "riak"
+    chef.add_recipe "mongodb"
+    chef.add_recipe "couchdb"
+    chef.add_recipe "memcached"
+    chef.add_recipe "rabbitmq::with_management_plugin"
+    chef.add_recipe "imagemagick"
+    chef.add_recipe "sphinx::all"
+    chef.add_recipe "xserver"
+    chef.add_recipe "firefox"
+    chef.add_recipe "python"
+    chef.add_recipe "python::pip"
+
+
+    chef.json.merge!({
+                       :rvm => {
+                         :rubies => %w(1.8.7 rbx-2.0 1.9.2 1.9.3 ruby-head jruby),
+                         :gems   => %w(bundler rake chef)
+                       }
+                     })
+  end
+end
