@@ -41,8 +41,15 @@ Vagrant::Config.run do |config|
 
     # chef.json.merge!({
     #                    :rvm => {
-    #                      :rubies  => %w(1.8.7 rbx-2.0 1.9.3 1.9.2 jruby),
-    #                      :aliases => {
+    #                      "ruby-1.8.7" => "1.8.7",
+    #                      "ruby-1.9.2" => "1.9.2",
+    #                      "ruby-1.9.3" => "1.9.3",
+    #                      "ruby-head " => "ruby-head",
+    #                      "jruby "     => "jruby",
+    #                      "rbx-2.0-18" => "rbx --branch 2.0.testing",
+    #                      "rbx-2.0-19" => "rbx -n d19 --branch 2.0.testing -- --default-version=1.9"
+    #                    },
+    #                    :aliases => {
     #                        "rbx"         => "rbx-head",
     #                        "rbx-2.0"     => "rbx-head",
     #                        "rbx-2.0.pre" => "rbx-head"
