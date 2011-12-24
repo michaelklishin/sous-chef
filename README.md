@@ -35,7 +35,7 @@ need to have Chef installed locally. It will only be run in a virtual machine.
 
 First install [VirtualBox 4.1.x](https://www.virtualbox.org/wiki/Downloads):
 
-* For [Mac OS X](x86/amd64)
+* For [Mac OS X](http://download.virtualbox.org/virtualbox/4.1.8/VirtualBox-4.1.8-75467-OSX.dmg)
 * For [64-bit Linux distributions](http://download.virtualbox.org/virtualbox/4.1.8/)
 
 Then install the vagrant gem:
