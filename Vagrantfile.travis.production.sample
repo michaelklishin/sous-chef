@@ -35,6 +35,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe "libncurses"
     chef.add_recipe "libossp-uuid"
     chef.add_recipe "libv8"
+    chef.add_recipe "ragel"
     chef.add_recipe "nodejs"
     chef.add_recipe "rvm"
     chef.add_recipe "rvm::multi"
