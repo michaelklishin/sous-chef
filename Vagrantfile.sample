@@ -7,6 +7,10 @@ Vagrant::Config.run do |config|
 
   config.vm.forward_port 'ssh', 22, 2220
 
+  config.vm.customize do |vm|
+    vm.memory_size = 768
+  end
+
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks/vagrant_base"
     chef.log_level      = :debug
