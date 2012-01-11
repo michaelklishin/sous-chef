@@ -12,7 +12,10 @@ Vagrant::Config.run do |config|
   end
 
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "cookbooks/vagrant_base"
+    # you can use multiple cookbook locations if necessary.
+    # For example, to develop both shared OSS cookbooks and your private
+    # product/company-specific ones.
+    chef.cookbooks_path = ["cookbooks/vagrant_base"]
     chef.log_level      = :debug
 
     # List the recipies you are going to work on/need.

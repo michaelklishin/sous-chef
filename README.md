@@ -64,11 +64,14 @@ To allow provisioning with chef you need to uncomment the following line
 
 After that point Vagrant at the cookbooks location by editing Vagrantfile. For Travis CI cookbooks, you just need to uncomment
 
-    # chef.cookbooks_path = "cookbooks/vagrant_base"
+    # you can use multiple cookbook locations if necessary.
+    # For example, to develop both shared OSS cookbooks and your private
+    # product/company-specific ones.
+    # chef.cookbooks_path = ["cookbooks/vagrant_base"]
 
-for other cookbook collections, provide a local path like so
+for other cookbook collections, provide a local path (or several) like so
 
-    chef.cookbooks_path = "cookbooks"
+    chef.cookbooks_path = ["cookbooks"]
 
 Next choose some cookbooks to provision. In the case of Travis CI cookbooks, build-essential is a good one to start with, so uncomment
 
@@ -83,7 +86,7 @@ Your Vagrantfile then will look like this:
       config.vm.provision :chef_solo do |chef|
         # point Vagrant at the location of cookbooks you are going to use,
         # for example, a clone of your fork of github.com/travis-ci/travis-cookbooks
-         chef.cookbooks_path = "cookbooks/vagrant_base"
+         chef.cookbooks_path = ["cookbooks/vagrant_base"]
     
         # Turn on verbose Chef logging if necessary
         # chef.log_level      = :debug
