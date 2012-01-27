@@ -1,9 +1,11 @@
 Vagrant::Config.run do |config|
-  # config.vm.box     = "lucid32_base"
-  # config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
-
   config.vm.box     = "natty32_base"
   config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
+
+  # Or switch to Ubuntu 11.10 if you want
+  # config.vm.box     = "oneiric32_base"
+  # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
+
 
   config.vm.forward_port 'ssh', 22, 2220
 
