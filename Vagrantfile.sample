@@ -11,6 +11,7 @@ Vagrant::Config.run do |config|
 
   config.vm.customize do |vm|
     vm.memory_size = 768
+    vm.cpu_count   = 2
   end
 
   config.vm.provision :chef_solo do |chef|
