@@ -20,6 +20,10 @@ Vagrant::Config.run do |config|
     chef.cookbooks_path = ["cookbooks/vagrant_base"]
     chef.log_level      = :debug
 
+    # Highly recommended to keep apt packages metadata in sync and
+    # be able to use apt mirrors.
+    chef.add_recipe     "apt"
+
     # List the recipies you are going to work on/need.
     # chef.add_recipe     "build-essential"
     # chef.add_recipe     "networking_basic"
@@ -49,6 +53,9 @@ Vagrant::Config.run do |config|
     # chef.add_recipe     "couchdb"
 
     # chef.json.merge!({
+    #                    :apt => {
+    #                      :mirror => :ru
+    #                    },
     #                    :rvm => {
     #                      :rubies  => [{ :name => "1.8.7" },
     #                                   { :name => "rbx-head", :arguments => "--branch 2.0.testing", :using => "1.8.7" },
