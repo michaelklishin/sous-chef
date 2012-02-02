@@ -18,7 +18,7 @@ Vagrant::Config.run do |config|
     # you can use multiple cookbook locations if necessary.
     # For example, to develop both shared OSS cookbooks and your private
     # product/company-specific ones.
-    chef.cookbooks_path = ["cookbooks/vagrant_base"]
+    chef.cookbooks_path = ["cookbooks/ci_environment"]
     chef.log_level      = :debug
 
     # Highly recommended to keep apt packages metadata in sync and
