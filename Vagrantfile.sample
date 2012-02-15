@@ -6,13 +6,9 @@ Vagrant::Config.run do |config|
   # config.vm.box     = "oneiric32_base"
   # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
 
-
-  config.vm.forward_port 'ssh', 22, 2220
-
-  config.vm.customize do |vm|
-    vm.memory_size = 768
-    vm.cpu_count   = 2
-  end
+  config.vm.forward_port 22, 2220
+  
+  config.vm.customize ["modifyvm", :id, "--memory", "768"]
 
   config.vm.provision :chef_solo do |chef|
     # you can use multiple cookbook locations if necessary.
