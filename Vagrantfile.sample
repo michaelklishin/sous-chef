@@ -7,12 +7,27 @@ Vagrant::Config.run do |config|
   # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
 
 
-  config.vm.forward_port 'ssh', 22, 2220
+  #
+  # For Vagrant 0.9.x
+  #
+  
+  config.vm.forward_port 22, 2220
 
-  config.vm.customize do |vm|
-    vm.memory_size = 768
-    vm.cpu_count   = 2
-  end
+  config.vm.customize ["modifyvm", :id, "--memory", "1024"]
+  # partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
+  # # of slow outgoing connections is large (in dozens or more).
+  config.vm.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
+
+  #
+  # For Vagrant 0.8.x
+  #
+
+  # config.vm.forward_port 'ssh', 22, 2220
+  #
+  # config.vm.customize do |vm|
+  #   vm.memory_size = 768
+  #   vm.cpu_count   = 2
+  # end
 
   config.vm.provision :chef_solo do |chef|
     # you can use multiple cookbook locations if necessary.
