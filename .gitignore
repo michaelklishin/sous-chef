@@ -18,3 +18,4 @@ tmp/*
 cookbooks
 cookbooks/*
 .rvmrc
+tmp/*

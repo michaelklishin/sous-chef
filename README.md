@@ -2,7 +2,7 @@
 
 Travis Sous Chef is a repository that makes development and testing of [Chef](http://www.opscode.com/chef/) cookbooks (for [Travis CI](http://travis-ci.org) but
 not just) easy. It brings practices that the [Travis Development Team](https://github.com/travis-ci) uses to develop
-new and test modified [cookbooks](https://github.com/travis-ci/travis-cookbooks/tree/master/vagrant_base) for
+new and test modified [cookbooks](https://github.com/travis-ci/travis-cookbooks/tree/master/ci_environment) for
 [Travis CI](http://travis-ci.org) to the masses.
 
 Sous Chef intentionally focuses on automating away as many distractions as possible so you can focus on developing your Chef cookbooks. It does just one thing but does it well.
@@ -10,7 +10,7 @@ Sous Chef intentionally focuses on automating away as many distractions as possi
 
 ## How it works
 
-With Sous Chef, you use Vagrant and a locally running VirtualBox VM to develop and test your cookbooks. Sous Chef can use any collection of cookbooks: [those we use for travis-ci.org](https://github.com/travis-ci/travis-cookbooks/tree/master/vagrant_base), cookbooks you are using for
+With Sous Chef, you use Vagrant and a locally running VirtualBox VM to develop and test your cookbooks. Sous Chef can use any collection of cookbooks: [those we use for travis-ci.org](https://github.com/travis-ci/travis-cookbooks/tree/master/ci_environment), cookbooks you are using for
 commercial projects, cookbooks from the [official OpsCode repository](http://github.com/opscode/cookbooks) or anything else.
 
 With Sous Chef, you provision a locally running virtual machine managed by [Vagrant](http://vagrantup.com) in just one command. The process is
@@ -67,7 +67,7 @@ After that point Vagrant at the cookbooks location by editing Vagrantfile. For T
     # you can use multiple cookbook locations if necessary.
     # For example, to develop both shared OSS cookbooks and your private
     # product/company-specific ones.
-    # chef.cookbooks_path = ["cookbooks/vagrant_base"]
+    # chef.cookbooks_path = ["cookbooks/ci_environment"]
 
 for other cookbook collections, provide a local path (or several) like so
 
@@ -86,7 +86,7 @@ Your Vagrantfile then will look like this:
       config.vm.provision :chef_solo do |chef|
         # point Vagrant at the location of cookbooks you are going to use,
         # for example, a clone of your fork of github.com/travis-ci/travis-cookbooks
-         chef.cookbooks_path = ["cookbooks/vagrant_base"]
+         chef.cookbooks_path = ["cookbooks/ci_environment"]
     
         # Turn on verbose Chef logging if necessary
         # chef.log_level      = :debug

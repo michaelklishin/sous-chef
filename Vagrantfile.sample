@@ -6,6 +6,7 @@ Vagrant::Config.run do |config|
   # config.vm.box     = "oneiric32_base"
   # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
 
+  config.vm.forward_port 22, 2220
 
   #
   # For Vagrant 0.9.x
@@ -33,7 +34,7 @@ Vagrant::Config.run do |config|
     # you can use multiple cookbook locations if necessary.
     # For example, to develop both shared OSS cookbooks and your private
     # product/company-specific ones.
-    chef.cookbooks_path = ["cookbooks/vagrant_base"]
+    chef.cookbooks_path = ["cookbooks/ci_environment"]
     chef.log_level      = :debug
 
     # Highly recommended to keep apt packages metadata in sync and
