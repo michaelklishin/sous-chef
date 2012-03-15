@@ -9,7 +9,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port 22, 2220
 
   #
-  # For Vagrant 0.9.x
+  # For Vagrant 0.9.x and 1.0.x
   #
   
   config.vm.forward_port 22, 2220
