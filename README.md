@@ -35,18 +35,18 @@ need to have Chef installed locally. It will only be run in a virtual machine.
 
 First install [VirtualBox 4.1.x](https://www.virtualbox.org/wiki/Downloads):
 
-* For [Mac OS X](http://download.virtualbox.org/virtualbox/4.1.8/VirtualBox-4.1.8-75467-OSX.dmg)
-* For [64-bit Linux distributions](http://download.virtualbox.org/virtualbox/4.1.8/)
+* For [Mac OS X](http://download.virtualbox.org/virtualbox/4.1.12/VirtualBox-4.1.12-77245-OSX.dmg)
+* For [64-bit Linux distributions](http://download.virtualbox.org/virtualbox/4.1.12/)
 
 Then install the vagrant gem:
 
-    gem install vagrant
+    gem install vagrant --version ">= 1.0"
 
 Copy sample Vagrant file:
 
     cp Vagrantfile.sample Vagrantfile
 
-Create a 32-bit Ubuntu 11.04 virtual machine you will be developing cookbooks in:
+Create a 32-bit Ubuntu virtual machine you will be developing cookbooks in:
 
     vagrant up 
 
@@ -80,8 +80,8 @@ Next choose some cookbooks to provision. In the case of Travis CI cookbooks, bui
 Your Vagrantfile then will look like this:
 
     Vagrant::Config.run do |config|
-      config.vm.box     = "natty32_base"
-      config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
+      config.vm.box     = "oneiric32_base"
+      config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
     
       config.vm.provision :chef_solo do |chef|
         # point Vagrant at the location of cookbooks you are going to use,
@@ -111,7 +111,7 @@ Then provision your VM (this will run chef-solo and converge VM to the state you
 
 
 Running chef-solo may take from several seconds to several minutes, dependeing on what selected recipes do. Building 13 Ruby versions/implementations
-for travis-ci.org, for example, takes slightly over 50 minutes but most of recipes run in under 15 seconds.
+for travis-ci.org, for example, takes over 50 minutes but most of recipes run in under 30 seconds.
 
 Once provisioning finishes, ssh into the VM to check what the environment looks like:
 
@@ -133,7 +133,7 @@ TBD
 
 ## Copyright
 
-Michael S. Klishin & Travis CI Development Team, 2011
+Michael S. Klishin & Travis CI Development Team, 2011-2012
 
 
 ## License

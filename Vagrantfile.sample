@@ -1,15 +1,15 @@
 Vagrant::Config.run do |config|
-  config.vm.box     = "natty32_base"
-  config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
+  # Or switch to Ubuntu 11.04 if you want
+  # config.vm.box     = "natty32_base"
+  # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/natty32.box"
 
-  # Or switch to Ubuntu 11.10 if you want
-  # config.vm.box     = "oneiric32_base"
-  # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
+  config.vm.box     = "oneiric32_base"
+  config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
 
   config.vm.forward_port 22, 2220
 
   #
-  # For Vagrant 0.9.x
+  # For Vagrant 0.9.x and 1.0.x
   #
   
   config.vm.forward_port 22, 2220
