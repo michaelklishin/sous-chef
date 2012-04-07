@@ -1,3 +1,3 @@
 source :rubygems
 
-gem "vagrant", "~> 0.9.0"
+gem "vagrant", "~> 1.0.0"
