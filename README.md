@@ -64,14 +64,17 @@ To allow provisioning with chef you need to uncomment the following line
 
 After that point Vagrant at the cookbooks location by editing Vagrantfile. For Travis CI cookbooks, you just need to uncomment
 
-    # you can use multiple cookbook locations if necessary.
-    # For example, to develop both shared OSS cookbooks and your private
-    # product/company-specific ones.
-    # chef.cookbooks_path = ["cookbooks/ci_environment"]
+    # this assumes you have travis-ci/travis-cookbooks cloned at ./cookbooks
+    chef.cookbooks_path = ["cookbooks/ci_environment"]
 
 for other cookbook collections, provide a local path (or several) like so
 
     chef.cookbooks_path = ["cookbooks"]
+
+You can use multiple cookbook locations if necessary.
+For example, to develop both shared OSS cookbooks and your private product/company-specific ones:
+
+    chef.cookbooks_path = ["cookbooks/ci_environment", "megacorp/cookbooks"]
 
 Next choose some cookbooks to provision. In the case of Travis CI cookbooks, build-essential is a good one to start with, so uncomment
 
