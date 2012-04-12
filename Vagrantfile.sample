@@ -19,21 +19,8 @@ Vagrant::Config.run do |config|
   # # of slow outgoing connections is large (in dozens or more).
   config.vm.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
 
-  #
-  # For Vagrant 0.8.x
-  #
-
-  # config.vm.forward_port 'ssh', 22, 2220
-  #
-  # config.vm.customize do |vm|
-  #   vm.memory_size = 768
-  #   vm.cpu_count   = 2
-  # end
-
   config.vm.provision :chef_solo do |chef|
-    # you can use multiple cookbook locations if necessary.
-    # For example, to develop both shared OSS cookbooks and your private
-    # product/company-specific ones.
+    # this assumes you have travis-ci/travis-cookbooks cloned at ./cookbooks
     chef.cookbooks_path = ["cookbooks/ci_environment"]
     chef.log_level      = :debug
 
