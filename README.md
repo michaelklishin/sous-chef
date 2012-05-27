@@ -46,11 +46,7 @@ Copy sample Vagrant file:
 
     cp Vagrantfile.sample Vagrantfile
 
-Create a 32-bit Ubuntu virtual machine you will be developing cookbooks in:
-
-    vagrant up 
-
-Once VM is created, create cookbooks directory or clone an existing collection of cookbooks like [Travis CI cookbooks](https://github.com/travis-ci/travis-cookbooks):
+Create a cookbooks directory or clone an existing collection of cookbooks like [Travis CI cookbooks](https://github.com/travis-ci/travis-cookbooks):
 
     mkdir cookbooks
     # or
@@ -108,7 +104,12 @@ Your Vagrantfile then will look like this:
       end
     end
 
-Then provision your VM (this will run chef-solo and converge VM to the state you want using Chef recipes you chosen to use):
+
+Create a 32-bit Ubuntu virtual machine you will be developing cookbooks in:
+
+    vagrant up 
+
+To provision the VM ("provisioning" means running chef-solo to converge the VM to the state you want using Chef recipes you'd chosen to use):
 
     vagrant provision
 
