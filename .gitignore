@@ -1,6 +1,7 @@
 *#
 #*
 ~*
+*~
 *.rbc
 *.class
 *.gem
@@ -19,3 +20,6 @@ cookbooks
 cookbooks/*
 .rvmrc
 tmp/*
+
+.bundle/*
+bin/*
