@@ -19,10 +19,9 @@ Vagrant::Config.run do |config|
   
   config.vm.forward_port 22, 2220
 
-  config.vm.customize ["modifyvm", :id, "--memory", "1024"]
-  # partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
+  # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
   # # of slow outgoing connections is large (in dozens or more).
-  config.vm.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
+  config.vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
 
   config.vm.provision :chef_solo do |chef|
     # this assumes you have travis-ci/travis-cookbooks cloned at ./cookbooks
