@@ -23,6 +23,9 @@ Vagrant::Config.run do |config|
   # # of slow outgoing connections is large (in dozens or more).
   config.vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
 
+  # see https://github.com/mitchellh/vagrant/issues/912
+  config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
+
   config.vm.provision :chef_solo do |chef|
     # this assumes you have travis-ci/travis-cookbooks cloned at ./cookbooks
     chef.cookbooks_path = ["cookbooks/ci_environment"]
