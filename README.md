@@ -79,8 +79,8 @@ Next choose some cookbooks to provision. In the case of Travis CI cookbooks, bui
 Your Vagrantfile then will look like this:
 
     Vagrant::Config.run do |config|
-      config.vm.box     = "oneiric32_base"
-      config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base.box"
+      config.vm.box     = "precise32_base"
+      config.vm.box_url = "http://files.travis-ci.org/boxes/bases/precise32_base.box"
     
       config.vm.provision :chef_solo do |chef|
         # point Vagrant at the location of cookbooks you are going to use,
