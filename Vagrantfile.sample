@@ -27,6 +27,12 @@ Vagrant::Config.run do |config|
   # see https://github.com/mitchellh/vagrant/issues/912
   config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
 
+  config.vm.provision :shell do |sh|
+    sh.inline = <<-EOF
+      /opt/ruby/bin/gem install chef --no-ri --no-rdoc --no-user-install
+    EOF
+  end
+
   config.vm.provision :chef_solo do |chef|
     # this assumes you have travis-ci/travis-cookbooks cloned at ./cookbooks
     chef.cookbooks_path = ["cookbooks/ci_environment"]
