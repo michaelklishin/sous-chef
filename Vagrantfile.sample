@@ -1,23 +1,14 @@
 Vagrant::Config.run do |config|
-  config.vm.box     = "oneiric32_base"
-  config.vm.box_url = "http://files.travis-ci.org/boxes/bases/oneiric32_base_v2.box"
 
-  # Ubuntu 12.04, 32 bit
-  # config.vm.box     = "precise32_base"
-  # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/precise32_base_v2.box"
-
-  # Ubuntu 12.04, 64 bit
-  # config.vm.box     = "precise64_base"
-  # config.vm.box_url = "http://files.travis-ci.org/boxes/bases/precise64_base_v2.box"
+  # See https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Boxes for more boxes.
+  config.vm.box     = "precise64_base"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
 
-  config.ssh.username = "travis"
+  # change default username if needed, according to your box's config.
+  # config.ssh.username = "travis"
   config.vm.forward_port 22, 2220
 
-  #
-  # For Vagrant 0.9.x and 1.0.x
-  #
-  
   config.vm.forward_port 22, 2220
 
   # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
