@@ -20,7 +20,7 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :shell do |sh|
     sh.inline = <<-EOF
-      /opt/ruby/bin/gem install chef --no-ri --no-rdoc --no-user-install
+      /opt/vagrant_ruby/bin/gem install chef --no-ri --no-rdoc --no-user-install
     EOF
   end
 
