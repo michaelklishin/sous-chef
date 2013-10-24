@@ -19,6 +19,7 @@ tmp/*
 cookbooks
 cookbooks/*
 .rvmrc
+.ruby-version
 tmp/*
 
 .bundle/*
