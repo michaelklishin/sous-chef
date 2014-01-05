@@ -137,7 +137,7 @@ TBD
 
 ## Copyright
 
-Michael S. Klishin & Travis CI Development Team, 2011-2012
+Michael S. Klishin & Travis CI Development Team, 2011-2014
 
 
 ## License
