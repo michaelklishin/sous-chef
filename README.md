@@ -143,3 +143,7 @@ Michael S. Klishin & Travis CI Development Team, 2011-2014
 ## License
 
 The MIT license. See LICENSE file in the repository root.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/michaelklishin/sous-chef/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
