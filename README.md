@@ -38,9 +38,7 @@ First install [VirtualBox 4.1.x](https://www.virtualbox.org/wiki/Downloads):
 * For [Mac OS X](http://download.virtualbox.org/virtualbox/4.1.12/VirtualBox-4.1.12-77245-OSX.dmg)
 * For [64-bit Linux distributions](http://download.virtualbox.org/virtualbox/4.1.12/)
 
-Then install the vagrant gem:
-
-    gem install vagrant --version ">= 1.0"
+Then [install Vagrant](http://www.vagrantup.com/downloads.html).
 
 Copy sample Vagrant file:
 
