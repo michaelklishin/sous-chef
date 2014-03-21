@@ -103,7 +103,7 @@ Your Vagrantfile then will look like this:
     end
 
 
-Create a 32-bit Ubuntu virtual machine you will be developing cookbooks in:
+Create an Ubuntu virtual machine you will be developing cookbooks in:
 
     vagrant up 
 
