@@ -77,7 +77,7 @@ Next choose some cookbooks to provision. In the case of Travis CI cookbooks, bui
 Your Vagrantfile then will look like this:
 
     Vagrant::Config.run do |config|
-      config.vm.box     = "precise32_base"
+      config.vm.box     = "precise64_base"
       config.vm.box_url = "http://files.vagrantup.com/precise64.box"
     
       config.vm.provision :chef_solo do |chef|
