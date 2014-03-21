@@ -4,23 +4,22 @@ Vagrant::Config.run do |config|
   config.vm.box     = "precise64_base"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-
-  # change default username if needed, according to your box's config.
+  # change default username if needed
   # config.ssh.username = "travis"
   config.vm.forward_port 22, 2220
 
-  config.vm.forward_port 22, 2220
+  config.vm.provider "virtualbox" do |vm|
+    # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
+    # # of slow outgoing connections is large (in dozens or more).
+    vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
 
-  # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
-  # # of slow outgoing connections is large (in dozens or more).
-  config.vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
-
-  # see https://github.com/mitchellh/vagrant/issues/912
-  config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
-
+    # see https://github.com/mitchellh/vagrant/issues/912
+    vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
+  end
   config.vm.provision :shell do |sh|
     sh.inline = <<-EOF
-      /opt/vagrant_ruby/bin/gem install chef --no-ri --no-rdoc --no-user-install
+      sudo apt-get install ruby1.9.1-dev
+      gem install chef --no-ri --no-rdoc --no-user-install
     EOF
   end
 
