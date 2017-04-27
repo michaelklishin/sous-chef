@@ -28,7 +28,7 @@ Vagrant.configure "2" do |config|
 
   config.vm.provision :chef_solo do |chef|
     # this assumes you have travis-ci/travis-cookbooks cloned at ./cookbooks
-    chef.cookbooks_path = ["cookbooks/ci_environment"]
+    chef.cookbooks_path = ["cookbooks/ci_environment", "cookbooks/worker_host"]
     chef.log_level      = :debug
 
     # Highly recommended to keep apt packages metadata in sync and
